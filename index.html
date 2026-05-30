@@ -24,25 +24,24 @@
 
         /* ========================================================================
            [대사창 가로폭 컴팩트 오버라이드 마스크]
-           플레이어 화면 전체에 투명한 벽을 세워, 화면이 너무 넓어질 때 
-           대사창이 들어가는 레이아웃 자체를 강제로 가운데로 모아줍니다.
+           화면이 너무 넓어질 때 대사창과 전체 레이아웃을 강제로 가운데로 모아줍니다.
            ========================================================================
         */
         @media (min-width: 800px) {
             .player-wrapper {
-                max-width: 850px;       /* 대사창이 퍼질 수 있는 최대 한계선을 850px로 제한 */
+                max-width: 850px;       /* 대사창이 퍼지는 최대 길이를 850px로 제한 */
                 margin: 0 auto;         /* 화면 가운데로 정렬 */
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* 양옆 여백 생길 때 경계선 음영 효과 */
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* 양옆 여백 경계선 음영 효과 */
             }
             body {
-                background-color: #11111a; /* 화면이 넓어질 때 좌우 남는 배경색 (더 어둡게 처리) */
+                background-color: #11111a; /* 화면이 넓어질 때 좌우 남는 배경색 */
             }
         }
     </style>
 </head>
 <body>
     <div class="player-wrapper">
-        <iframe src="https://ohohod.github.io/vnlog/embed?json=https://raw.githubusercontent.com/vaniling16-byte/humbleservice/main/buri.json&autoplay=true" allow="autoplay" allowfullscreen></iframe>
+        <iframe src="https://ohohod.github.io/vnlog/embed?json=https://raw.githubusercontent.com/vaniling16-byte/humbleservice/main/my_editable_page_edited%20(1).json&autoplay=true" allow="autoplay" allowfullscreen></iframe>
     </div>
 </body>
 </html>
