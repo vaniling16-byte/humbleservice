@@ -5,26 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>개와 말의 정성 - 플레이어</title>
     <style>
+        /* 기본 전체 화면 세팅 */
         html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #1a1a2e; }
-        iframe { width: 100%; height: 100%; border: none; }
-
-        /* ------------------------------------------------------------------------
-           [VNLog 대사창 레이아웃 커스텀 CSS]
-           iframe 내부의 대사창 요소를 강제로 타겟팅하여 가로폭을 줄이고 가운데로 정렬합니다.
-        --------------------------------------------------------------------------- */
         
-        /* 대사창 박스 전체 제어 */
-        iframe + *, .vn-message-box, [class*="message-box"], [class*="Dialogue"] {
-            max-width: 700px !important;  /* 대사창의 최대 가로 길이를 800px로 제한 (원하는 만큼 조절 가능) */
-            width: 90% !important;        /* 모바일 등 작은 화면에서는 화면 대비 90% 유지 */
-            margin-left: auto !important;  /* 좌측 여백 자동 (가운데 정렬 마법) */
-            margin-right: auto !important; /* 우측 여백 자동 (가운데 정렬 마법) */
-            left: 0 !important;
-            right: 0 !important;
+        /* 플레이어 컨테이너 감싸기 */
+        .player-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+            display: block;
+        }
+
+        /* ========================================================================
+           [대사창 가로폭 컴팩트 오버라이드 마스크]
+           플레이어 화면 전체에 투명한 벽을 세워, 화면이 너무 넓어질 때 
+           대사창이 들어가는 레이아웃 자체를 강제로 가운데로 모아줍니다.
+           ========================================================================
+        */
+        @media (min-width: 800px) {
+            .player-wrapper {
+                max-width: 850px;       /* 대사창이 퍼질 수 있는 최대 한계선을 850px로 제한 */
+                margin: 0 auto;         /* 화면 가운데로 정렬 */
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* 양옆 여백 생길 때 경계선 음영 효과 */
+            }
+            body {
+                background-color: #11111a; /* 화면이 넓어질 때 좌우 남는 배경색 (더 어둡게 처리) */
+            }
         }
     </style>
 </head>
 <body>
-    <iframe src="https://ohohod.github.io/vnlog/embed?json=https://raw.githubusercontent.com/vaniling16-byte/humbleservice/main/buri.json&autoplay=true" allow="autoplay" allowfullscreen></iframe>
+    <div class="player-wrapper">
+        <iframe src="https://ohohod.github.io/vnlog/embed?json=https://raw.githubusercontent.com/vaniling16-byte/humbleservice/main/buri.json&autoplay=true" allow="autoplay" allowfullscreen></iframe>
+    </div>
 </body>
 </html>
