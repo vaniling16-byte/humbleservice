@@ -7,6 +7,21 @@
     <style>
         html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #1a1a2e; }
         iframe { width: 100%; height: 100%; border: none; }
+
+        /* ------------------------------------------------------------------------
+           [VNLog 대사창 레이아웃 커스텀 CSS]
+           iframe 내부의 대사창 요소를 강제로 타겟팅하여 가로폭을 줄이고 가운데로 정렬합니다.
+        --------------------------------------------------------------------------- */
+        
+        /* 대사창 박스 전체 제어 */
+        iframe + *, .vn-message-box, [class*="message-box"], [class*="Dialogue"] {
+            max-width: 700px !important;  /* 대사창의 최대 가로 길이를 800px로 제한 (원하는 만큼 조절 가능) */
+            width: 90% !important;        /* 모바일 등 작은 화면에서는 화면 대비 90% 유지 */
+            margin-left: auto !important;  /* 좌측 여백 자동 (가운데 정렬 마법) */
+            margin-right: auto !important; /* 우측 여백 자동 (가운데 정렬 마법) */
+            left: 0 !important;
+            right: 0 !important;
+        }
     </style>
 </head>
 <body>
