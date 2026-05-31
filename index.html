@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>개와 말의 정성 - 플레이어</title>
     <style>
-        /* 기본 전체 화면 세팅 및 뒷배경 어둡게 암전 */
+        /* 기본 전체 화면 세팅 및 주변부 암전 */
         html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #0c0c14; }
         
         /* 
-           [마법의 울타리 컨테이너] 
-           플레이어 화면 전체를 강제로 850px 박스 안에 가두고 화면 중앙에 정렬합니다.
-           이렇게 하면 내부의 대사창이 넓어지고 싶어도 물리적으로 850px 공간에 갇히게 됩니다.
+           [컴팩트 비주얼 노벨 뷰어 프레임]
+           화면 해상도를 최대 850px로 쥐어짜서 가두는 마스크입니다.
+           이를 통해 대사창 가로폭이 화면 끝까지 찢어지는 현상을 원천 차단합니다.
         */
         .player-frame-container {
             position: relative;
-            max-width: 900px;       /* 전체 플레이어 해상도를 850px로 콤팩트하게 제한 */
+            max-width: 850px;       /* 대사창과 콘텐츠가 퍼질 수 있는 한계선 */
             width: 100%;
             height: 100%;
-            margin: 0 auto;         /* 화면 정중앙 배치 */
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); /* 양옆 빈 공간과의 경계선 음영 */
+            margin: 0 auto;         /* 화면 정중앙 정렬 */
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); /* 좌우 여백과의 경계 음영 */
         }
 
         iframe { 
@@ -32,8 +32,8 @@
 </head>
 <body>
     <div class="player-frame-container">
-        <!-- 유저님의 최신 파일명 my_editable_page_edited (1).json 연동 완료 -->
-        <iframe src="https://ohohod.github.io/vnlog/embed?json=https://raw.githubusercontent.com/vaniling16-byte/humbleservice/main/my_editable_page_edited%20(1).json&autoplay=true" allow="autoplay" allowfullscreen></iframe>
+        <!-- 띄어쓰기 없는 깔끔한 buri.json 주소로 완벽하게 다이렉트 연결했습니다 -->
+        <iframe src="https://ohohod.github.io/vnlog/embed?json=https://raw.githubusercontent.com/vaniling16-byte/humbleservice/main/buri.json&autoplay=true" allow="autoplay" allowfullscreen></iframe>
     </div>
 </body>
 </html>
